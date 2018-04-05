@@ -1,14 +1,14 @@
 .App-header {
-	padding: 0.5rem 0;
-	background-color: #182C61;
+  padding: 0.5rem 0;
+  background-color: #182C61;
 }
 
 
 .App-header h2 {
-	margin: 0.2rem 0;
-	text-align: center;
-	word-spacing: 0.2rem;
-	letter-spacing: 0.1rem;
-	color: #EAB543;
-	text-shadow: 1px 2px 2px #000;
+  margin: 0.2rem 0;
+  text-align: center;
+  word-spacing: 0.2rem;
+  letter-spacing: 0.1rem;
+  color: #EAB543;
+  text-shadow: 1px 2px 2px #000;
 }

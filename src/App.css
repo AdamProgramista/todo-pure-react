@@ -1,23 +1,23 @@
 * {
   margin: 0;
   padding: 0;
-	border: 0;
+  border: 0;
   box-sizing: border-box;
 }
 
 html {
-	font-size: 20px;
-	
+  font-size: 20px;
+  
 }
 
 body {
 /*  background-color: #bccaee;*/
 /*	background-color: #f3d38f;*/
-	background: linear-gradient(90deg,#90cffe,#efc771 );
-	font-family: 'Open Sans', sans-serif;
+  background: linear-gradient(90deg,#90cffe,#efc771 );
+  font-family: 'Open Sans', sans-serif;
 }
 
 .App {
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
