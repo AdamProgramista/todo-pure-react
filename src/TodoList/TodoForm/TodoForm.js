@@ -17,7 +17,7 @@ export class TodoForm extends Component {
     this.setState({
 			todoContent: writtenText,
 			todoStatus: this.props.todoStatus
-			});
+		});
   }
 	
 	confirmTodoHandler = () => {
