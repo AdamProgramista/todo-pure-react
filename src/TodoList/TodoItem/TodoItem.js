@@ -4,8 +4,8 @@ import { Button } from '../Button/Button.js'
 import { FaMinus, FaArrowRight, FaArrowLeft, FaPencil, FaCheck } from 'react-icons/lib/fa';
 
 export class TodoItem extends React.Component {
-  constructor(props) {
-    super(props);
+	constructor(props) {
+		super(props);
 		this.state = {
 			editing: false,
 			currentId: 0,
@@ -23,10 +23,10 @@ export class TodoItem extends React.Component {
 	
 	modifyTodoHandler = (event) => {
 		const writtenText = event.target.value;
-    this.setState({
+		this.setState({
 			currentText: writtenText,
 		});
-  	}
+		}
 	
 	confirmModifyTodoHandler = () => {
 		const {currentId, currentText} = this.state;
@@ -59,9 +59,9 @@ export class TodoItem extends React.Component {
 					onChange={this.modifyTodoHandler}
 					value={this.state.currentText}/>
 					<Button
-        	clickHandler={this.confirmModifyTodoHandler}
-        	classExtra="btn-check"
-        	icon={<FaCheck />}/>
+					clickHandler={this.confirmModifyTodoHandler}
+					classExtra="btn-check"
+					icon={<FaCheck />}/>
 				</div>
 			)
 		} else {
@@ -81,6 +81,6 @@ export class TodoItem extends React.Component {
 						classExtra="btn-delete"
 						icon={<FaMinus />}/>
 				</div>
-    )}
-  }
+		)}
+	}
 }

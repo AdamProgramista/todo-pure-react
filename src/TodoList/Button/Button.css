@@ -1,13 +1,13 @@
 
 .btn {
-  border-radius: 0.2rem;
-  background: #efc771;
-  padding: 0 0.3rem;
+	border-radius: 0.2rem;
+	background: #efc771;
+	padding: 0 0.3rem;
 	font-size: 1.2rem;
 }
 
 .btn:hover {
-  background: #eab543;
+	background: #eab543;
 }
 
 .btn-add {
@@ -15,7 +15,7 @@
 }
 
 .btn-delete {
-   color: #ff0000;
+	 color: #ff0000;
 }
 
-  
+	

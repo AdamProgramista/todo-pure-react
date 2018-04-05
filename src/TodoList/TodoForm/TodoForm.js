@@ -7,31 +7,31 @@ export class TodoForm extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-    	todoContent: '',
+			todoContent: '',
 			todoStatus: ''
-    } 
+		} 
 	}
 	
 	textHandler = (event) => {
 		const writtenText = event.target.value;
-    this.setState({
+		this.setState({
 			todoContent: writtenText,
 			todoStatus: this.props.todoStatus
 		});
-  }
+	}
 	
 	confirmTodoHandler = () => {
 		if (this.state.todoContent.length > 0){
-      this.props.addTodoHandler(this.state);
-      this.clearTodoState();
-    } 
+			this.props.addTodoHandler(this.state);
+			this.clearTodoState();
+		} 
 	}
 	
 	clearTodoState = () => {
-    this.setState ({
-      todoContent: '',
-    })
-  }
+		this.setState ({
+			todoContent: '',
+		})
+	}
 	
 	render() {
 		return (
@@ -47,6 +47,6 @@ export class TodoForm extends Component {
 					classExtra="btn-add"
 					clickHandler={this.confirmTodoHandler}/>
 			</div>
-    );
-  }
+		);
+	}
 }

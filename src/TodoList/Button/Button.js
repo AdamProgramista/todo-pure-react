@@ -10,6 +10,6 @@ export class Button extends Component {
 				type="submit"
 				onClick={this.props.clickHandler}>
 				{this.props.icon}</button>
-    );
-  }
+		);
+	}
 }

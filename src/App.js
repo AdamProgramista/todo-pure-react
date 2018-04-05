@@ -4,8 +4,8 @@ import { Header } from './Header/Header.js';
 import { TodoList } from './TodoList/TodoList.js';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
+	constructor(props) {
+		super(props);
 		this.state = {
 			nextId: 1,
 			lists: [
@@ -24,34 +24,34 @@ class App extends Component {
 	addTodoHandler = (todo) => {
 		const newTodo = {
 			id: this.state.nextId,
-	    text: todo.todoContent
-    }
+			text: todo.todoContent
+		}
 		
 		const status = todo.todoStatus;
 		
 		this.setState({
-    	nextId: this.state.nextId + 1,
-    	lists: this.state.lists.map(list => {
-      	if(list.description === status) {
-          return {
-             ...list,
-             todos: [ ...list.todos, newTodo ]
-          }
-      	}
-      	return list;
-    	})
-  	});
+			nextId: this.state.nextId + 1,
+			lists: this.state.lists.map(list => {
+				if(list.description === status) {
+					return {
+						 ...list,
+						 todos: [ ...list.todos, newTodo ]
+					}
+				}
+				return list;
+			})
+		});
 	}
 	
 	removeTodo = (id) => {
 		this.setState({
-    	lists: this.state.lists.map(list => {
+			lists: this.state.lists.map(list => {
 				return {
 					...list,
 					todos: list.todos.filter(todo => todo.id !== id)
 				}
-    	})
-  	});
+			})
+		});
 	}
 	
 	changeTodoPlace = (id, text, status) => {
@@ -97,7 +97,7 @@ class App extends Component {
 			text: newText
 		}
 		this.setState({
-    	lists: this.state.lists.map(list => {
+			lists: this.state.lists.map(list => {
 				const todoIndex = list.todos.findIndex(todo => todo.id === id)
 				if (todoIndex>=0){
 					return {
@@ -107,13 +107,13 @@ class App extends Component {
 				} else {
 					return list;
 				}
-    	})
-  	});
+			})
+		});
 	}
 	
-  render() {
+	render() {
 			console.log(this.state);
-	    return (
+			return (
 			<div className="App">
 				<Header text="My TodoApp" />
 				{this.state.lists.map(list => (
@@ -129,7 +129,7 @@ class App extends Component {
 				))}
 			</div>
 		);
-  }
+	}
 }
 
 export default App;
