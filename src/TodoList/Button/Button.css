@@ -1,21 +1,37 @@
 
 .btn {
   border-radius: 0.2rem;
-  background: #efc771;
-  padding: 0 0.3rem;
-  font-size: 1.2rem;
+  background: #d0e0b8;
+  padding: 0 0.2rem;
+  font-size: 1rem;
+  margin-left: 0.1rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
 }
 
 .btn:hover {
-  background: #eab543;
+  background: #a9c67d;
 }
 
 .btn-add {
-  color: #008000;
+  padding-top: 0.1rem;
+  color: #44883c;
 }
 
 .btn-delete {
-   color: #ff0000;
+  padding-top: 0.1rem;
+  color: #ff0000;
 }
 
-  
+.btn-arrow {
+  color: #44883c;
+}
+
+.btn-edit {
+  color:#2a333c;
+}
+
+.btn-ok {
+  color: #44883c;
+}

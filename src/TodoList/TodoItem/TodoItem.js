@@ -1,7 +1,7 @@
 import React from 'react';
 import '../TodoAll.css';
 import { Button } from '../Button/Button.js'
-import { FaMinus, FaArrowRight, FaArrowLeft, FaPencil, FaCheck } from 'react-icons/lib/fa';
+import { FaMinus, FaPencil, FaCheck } from 'react-icons/lib/fa';
 
 export class TodoItem extends React.Component {
   constructor(props) {
@@ -60,7 +60,7 @@ export class TodoItem extends React.Component {
           value={this.state.currentText}/>
           <Button
           clickHandler={this.confirmModifyTodoHandler}
-          classExtra="btn-check"
+          classExtra="btn-ok"
           icon={<FaCheck />}/>
         </div>
       )

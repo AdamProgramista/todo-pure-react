@@ -59,7 +59,6 @@ class App extends Component {
       id,
       text
     }
-    console.log(todoCopy);
     switch (status) {
       case 'To do':
         return this.setState({
@@ -91,7 +90,6 @@ class App extends Component {
   }
   
   modifyTodo = (id, newText) => {
-    console.log(id, newText);
     const modifiedTodo = {
       id,
       text: newText
@@ -112,8 +110,7 @@ class App extends Component {
   }
   
   render() {
-      console.log(this.state);
-      return (
+    return (
       <div className="App">
         <Header text="My TodoApp" />
         {this.state.lists.map(list => (
