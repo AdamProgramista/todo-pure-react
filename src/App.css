@@ -1,70 +1,19 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i&amp;subset=latin-ext');
-
-* {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  box-sizing: border-box;
-}
-
-html {
-  font-size: 16px;
-}
-
-body {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),url("background.jpg");
-  font-family: 'Open Sans', sans-serif;
-}
-
 .App {
   display: flex;
   flex-direction: column;
 }
 
-@media only screen and (min-width:480px) { 
-  /* smartphones, Android phones, landscape iPhone */ 
-  html {
-    font-size: 18px;
-  }
-}
-
-@media only screen and (min-width:600px) { 
-/* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */ 
-  html {
-    font-size: 20px;
-  }
+.App-content {
+  display: flex;
+  flex-direction: column;
 }
 
 @media only screen and (min-width:801px) { 
   /* tablet, landscape iPad, lo-res laptops ands desktops */
-  html {
-    font-size: 20px;
-  }
-  
-  .App {
+ 
+  .App-content {
+    display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-  }
 
-  .App > * {
-    flex: 1 0 50%;
   }
-
-  .App > *:first-child {
-    flex: 0 1 100%;
-  }
-}
-  
-@media only screen and (min-width:1025px) {
-/* big landscape tablets, laptops, and desktops */
-  html {
-    font-size: 22px;
-  } 
-}
-
-@media only screen and (min-width:1281px) { 
-/* hi-res laptops and desktops */ 
-  html {
-    font-size: 24px;
-  } 
 }
