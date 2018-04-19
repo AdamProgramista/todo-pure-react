@@ -54,39 +54,44 @@ class App extends Component {
     });
   }
   
-  changeTodoPlace = (id, text, status) => {
+  progressMove = (id, text, listIndex) => {
     const todoCopy = {
       id,
       text
     }
-    switch (status) {
-      case 'To do':
-        return this.setState({
-          lists: [
-            {
-              description: this.state.lists[0].description,
-              todos: [...this.state.lists[0].todos.filter(todo => todo.id !== id)]
-            },
-            {
-              description: this.state.lists[1].description,
-              todos: [ ...this.state.lists[1].todos, todoCopy ]
-            }
-          ]
-        })
-      case 'Done':
-         return this.setState({
-          lists: [
-            {
-              description: this.state.lists[0].description,
-              todos: [ ...this.state.lists[0].todos, todoCopy ]
-            },
-            {
-              description: this.state.lists[1].description,
-              todos: [...this.state.lists[1].todos.filter(todo => todo.id !== id)]
-            },
-          ]
-        })
-      }
+
+    this.setState({
+      lists: [
+        {
+          description: this.state.lists[listIndex].description,
+          todos: [...this.state.lists[listIndex].todos.filter(todo => todo.id !== id)]
+        },
+        {
+          description: this.state.lists[listIndex+1].description,
+          todos: [ ...this.state.lists[listIndex+1].todos, todoCopy ]
+        }
+      ]
+    })
+  }
+
+  regressMove = (id, text, listIndex) => {
+    const todoCopy = {
+      id,
+      text
+    }
+
+    this.setState({
+      lists: [
+        {
+          description: this.state.lists[listIndex-1].description,
+          todos: [ ...this.state.lists[listIndex-1].todos, todoCopy ]
+        },
+        {
+          description: this.state.lists[listIndex].description,
+          todos: [...this.state.lists[listIndex].todos.filter(todo => todo.id !== id)]
+        },
+      ]
+    })
   }
   
   modifyTodo = (id, newText) => {
@@ -113,17 +118,21 @@ class App extends Component {
     return (
       <div className="App">
         <Header text="My TodoApp" />
-        {this.state.lists.map(list => (
-        <TodoList
-          key={list.description}
-          list={list.description}
-          addTodoHandler={this.addTodoHandler}
-          changeTodoPlace={this.changeTodoPlace}
-          removeTodo={this.removeTodo}
-          modifyTodo={this.modifyTodo}
-          todos={list.todos}
-          />
+        <div className="App-content">
+        {this.state.lists.map((list,index) => (
+          <TodoList
+            key={index}
+            index={index}
+            lastIndex={this.state.lists.length-1}
+            list={list.description}
+            addTodoHandler={this.addTodoHandler}
+            progressMove={this.progressMove}
+            regressMove={this.regressMove}
+            removeTodo={this.removeTodo}
+            modifyTodo={this.modifyTodo}
+            todos={list.todos}/>
         ))}
+        </div>
       </div>
     );
   }

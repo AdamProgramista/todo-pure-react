@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../TodoAll.css';
-import { Button } from '../Button/Button.js'
+import { Button } from '../../Button/Button.js'
 import { FaPlus } from 'react-icons/lib/fa';
 
 export class TodoForm extends Component {
@@ -44,7 +44,7 @@ export class TodoForm extends Component {
           placeholder={this.props.placeholder} />
         <Button
           icon={<FaPlus />}
-          classExtra="btn-add"
+          type="btn-add"
           clickHandler={this.confirmTodoHandler}/>
       </div>
     );
